@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boletín Abril 2026 – Transformación Digital UNED</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#e8edf3;color:#1a2a3a}
+:root{
+  --blue:#1a3a6e;--blue-mid:#2457a4;--blue-light:#e6eef8;
+  --teal:#1e9daa;--teal-light:#e0f5f7;
+  --amber:#e8a020;--amber-light:#fef3dc;
+  --white:#fff;--border:#dde3ec;
+  --text:#0f1e30;--mid:#3a4f66;--muted:#6b7f96
+}
+.page{max-width:800px;margin:0 auto;background:var(--white);box-shadow:0 2px 28px rgba(0,0,0,.12)}
+
+/* HEADER */
+.header{background:var(--blue)}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:18px 32px 14px;border-bottom:3px solid var(--amber)}
+.logo-img{height:68px;display:block;object-fit:contain}
+.header-meta{text-align:right}
+.boletin-label{font-size:11px;color:var(--amber);letter-spacing:1.5px;text-transform:uppercase;font-weight:600}
+.boletin-title{font-size:17px;color:var(--white);font-weight:600;margin-top:2px}
+.boletin-date{font-size:12px;color:rgba(255,255,255,.6);margin-top:3px}
+.header-banner{background:var(--teal);padding:9px 32px;display:flex;align-items:center;gap:10px}
+.edition-badge{font-size:12px;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.35);border-radius:4px;padding:2px 9px;font-weight:600}
+.period-text{font-size:13px;color:var(--white);font-weight:500}
+
+/* DIVISOR */
+.story-divider{display:flex;align-items:center;gap:12px;padding:0 32px;margin:6px 0}
+.story-divider::before,.story-divider::after{content:'';flex:1;height:1.5px;background:linear-gradient(to right,var(--teal),var(--amber))}
+.story-divider span{font-size:11px;color:var(--muted);white-space:nowrap;letter-spacing:.6px;text-transform:uppercase}
+
+/* NOTICIAS */
+.story-block{padding:24px 32px 16px}
+.story-block.secondary{padding-top:20px}
+.section-tag{display:inline-block;color:var(--white);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:3px;margin-bottom:6px}
+.tag-entrada{background:var(--muted);font-size:10px}
+.tag-main{background:var(--teal)}
+.tag-2{background:var(--blue-mid)}
+.tag-3{background:var(--amber)}
+.story-entrada{font-size:11px;color:var(--muted);font-style:italic;margin-bottom:4px}
+.story-title{font-size:21px;font-weight:700;color:var(--blue);line-height:1.25;margin-bottom:8px}
+.story-block.secondary .story-title{font-size:18px}
+.story-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:12px;color:var(--muted);margin-bottom:12px;padding-bottom:12px;border-bottom:1.5px solid var(--border)}
+.meta-dot{width:4px;height:4px;background:var(--amber);border-radius:50%;flex-shrink:0}
+.story-lead{font-size:14.5px;color:var(--mid);line-height:1.8;margin-bottom:12px}
+.story-body{font-size:13.5px;color:var(--mid);line-height:1.85}
+.story-link{display:inline-block;margin-top:10px;font-size:12.5px;color:var(--teal);text-decoration:none;font-weight:600}
+.story-link:hover{text-decoration:underline}
+
+/* GALERÍA */
+.gallery-section{padding:4px 32px 18px}
+.gallery-label{font-size:10px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.photo-grid{display:grid;gap:6px}
+.photo-grid.g3{grid-template-columns:repeat(3,1fr)}
+.photo-grid.g2{grid-template-columns:repeat(2,1fr)}
+.photo-slot{background:var(--blue-light);border-radius:6px;overflow:hidden}
+.photo-slot img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-caption{font-size:11px;color:var(--muted);margin-top:6px;font-style:italic;text-align:center}
+
+/* TESTIMONIO */
+.quote-block{margin:0 32px 20px;border-left:4px solid var(--amber);background:var(--amber-light);border-radius:0 6px 6px 0;padding:13px 16px}
+.quote-block.teal{border-left-color:var(--teal);background:var(--teal-light)}
+.quote-block.blue{border-left-color:var(--blue-mid);background:var(--blue-light)}
+.quote-text{font-size:13.5px;color:var(--text);font-style:italic;line-height:1.65}
+.quote-author{font-size:11.5px;color:var(--amber);font-weight:700;margin-top:6px}
+.quote-block.teal .quote-author{color:var(--teal)}
+.quote-block.blue .quote-author{color:var(--blue-mid)}
+
+/* ACTIVIDADES */
+.activities-section{margin:0 32px 28px;border-radius:8px;border:1px solid #c5d5e8;overflow:hidden}
+.activities-header{background:var(--blue);color:var(--white);padding:10px 18px;display:flex;align-items:center;justify-content:space-between}
+.activities-header-text{font-size:13px;font-weight:600}
+.ctrl-btn{font-size:11px;background:rgba(255,255,255,.15);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.25);border-radius:4px;padding:3px 9px;cursor:pointer}
+.activities-body{background:var(--blue-light);padding:10px 18px}
+.activity-item{display:flex;gap:14px;padding:9px 0;border-bottom:1px solid #d0dce8;align-items:flex-start}
+.activity-item:last-child{border-bottom:none;padding-bottom:0}
+.activity-date-box{min-width:46px;text-align:center;background:var(--teal);border-radius:5px;padding:5px 6px;flex-shrink:0}
+.activity-day{font-size:17px;font-weight:700;color:var(--white);line-height:1}
+.activity-month{font-size:10px;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:.5px}
+.activity-name{font-size:13px;font-weight:600;color:var(--blue);margin-bottom:2px}
+.activity-detail{font-size:12px;color:var(--muted)}
+
+/* FOOTER */
+.footer{background:var(--blue);padding:18px 32px;display:flex;align-items:center;justify-content:space-between;border-top:3px solid var(--amber)}
+.footer-left{font-size:12px;color:rgba(255,255,255,.65);line-height:1.8}
+.footer-left strong{color:var(--white);display:block;font-size:13px}
+.footer-right{text-align:right}
+.footer-teal-tag{font-size:11px;color:var(--teal);letter-spacing:.5px;font-weight:600}
+.footer-slogan{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px;font-style:italic}
+
+/* TOOLBAR */
+.toolbar{display:flex;gap:8px;padding:10px 32px;background:#f0f4f8;border-bottom:1px solid var(--border);flex-wrap:wrap;align-items:center}
+.toolbar span{font-size:12px;color:var(--muted);margin-right:4px}
+.tb-btn{font-size:12px;background:var(--white);border:1px solid var(--border);border-radius:4px;padding:5px 13px;cursor:pointer;color:var(--mid);font-weight:600}
+.tb-btn.primary{background:var(--teal);color:#fff;border-color:var(--teal)}
+.tb-btn:hover{background:var(--teal-light);border-color:var(--teal);color:var(--teal)}
+.tb-btn.primary:hover{background:#178a96}
+
+@media print{
+  .toolbar{display:none!important}
+  body{background:white}
+  .page{box-shadow:none;max-width:100%}
+  .story-link{color:var(--teal)!important}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span>📄 Boletín Abril 2026</span>
+  <button class="tb-btn primary" onclick="exportPDF()">🖨 Exportar a PDF</button>
+  <button class="tb-btn" onclick="toggleActividades()">Mostrar/ocultar actividades</button>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <!-- LOGO: reemplazar src con URL pública del logo o cargarlo localmente -->
+    <div id="logoWrap" style="position:relative;display:inline-block;cursor:pointer;">
+      <img id="logoImg" class="logo-img" src="logo%20actualizado%20fondo%20blanco.png" alt="Logo UNED Transformación Digital">
+    </div>
+    <div class="header-meta">
+      <div class="boletin-label">Boletín informativo</div>
+      <div class="boletin-title">Transformación Digital</div>
+      <div class="boletin-date">📅 Abril 2026</div>
+    </div>
+  </div>
+  <div class="header-banner">
+    <span class="edition-badge">Edición Abril 2026</span>
+    <span class="period-text">Período: Abril 2026 — Estrategia de Transformación Digital, UNED</span>
+  </div>
+</div>
+
+<!-- ══════════ NOTICIA 1 ══════════ -->
+<div class="story-block">
+  <div class="story-entrada">Plataforma diseñada por el PEM</div>
+  <span class="section-tag tag-main">Noticia principal</span>
+  <h1 class="story-title">UNED reconoce a 117 "Agentes de Transformación" en histórica entrega de insignias digitales</h1>
+  <div class="story-meta">
+    <span>🗓 14 de abril, 2026</span>
+    <div class="meta-dot"></div>
+    <span>📌 Estrategia de Transformación Digital</span>
+  </div>
+  <p class="story-lead">En un evento virtual realizado el pasado martes 14 de abril, la Universidad Estatal a Distancia (UNED) celebró la entrega simbólica de insignias digitales a 117 personas, entre funcionarios y estudiantes, reconocidos bajo el concepto de "Agentes de Transformación". Esta actividad tuvo como objetivo principal agradecer públicamente el compromiso y la colaboración de quienes integraron los 15 equipos de trabajo que dieron vida a la Hoja de Ruta de Transformación Digital 2023-2025, resaltando que este proceso trasciende lo tecnológico para centrarse en un enfoque profundamente humano.</p>
+  <p class="story-body">Durante el encuentro, se presentó formalmente el sistema institucional de insignias digitales, una plataforma estratégica construida por el Programa de Electrónica Multimedia (PEM). Este nuevo sistema permite a la universidad otorgar reconocimientos portables que visibilizan competencias clave como el pensamiento crítico, el liderazgo transformacional y diversas destrezas digitales, permitiendo a los beneficiarios compartirlas en sus perfiles profesionales y redes sociales como LinkedIn. Con esta innovación, la UNED se posiciona a la vanguardia en el uso de este tipo de recursos para fortalecer el perfil profesional de su comunidad.<br><br>
+  La jornada incluyó un espacio emotivo para escuchar los testimonios de protagonistas como Niza Castro, Vilma Peña y Luis Fernando Fallas, quienes destacaron el valor del trabajo en red y la redarquía, señalando que el proceso les permitió aprender nuevas formas de colaboración y romper con las estructuras jerárquicas tradicionales. El evento concluyó con una invitación a continuar impulsando la innovación colectiva, reafirmando que el verdadero valor del cambio reside en las personas que lo hacen posible.</p>
+  <a class="story-link" href="https://www.youtube.com/watch?v=hJi0UgHSLUE&t=3s" target="_blank">▶ Ver grabación del evento</a>
+</div>
+
+<!-- Galería Noticia 1 -->
+<div class="gallery-section">
+  <div class="gallery-label">Registro fotográfico</div>
+
+  <div class="photo-grid g3" style="grid-template-rows:180px 180px;">
+    <div class="photo-slot" id="s1"><img src="Bloque%201-1.jpg" alt="Foto 1"></div>
+    <div class="photo-slot" id="s2"><img src="Bloque%201-2.jpg" alt="Foto 2"></div>
+    <div class="photo-slot" id="s3"><img src="Bloque%201-3.jpg" alt="Foto 3"></div>
+    <div class="photo-slot" id="s4"><img src="Bloque%201-4.jpg" alt="Foto 4"></div>
+    <div class="photo-slot" id="s5"><img src="Bloque%201-5.jpg" alt="Foto 5"></div>
+    <div class="photo-slot" id="s6"><img src="Bloque%201-6.jpg" alt="Foto 6"></div>
+  </div>
+  <p class="photo-caption">Evento virtual de entrega de insignias digitales – 14 de abril, 2026</p>
+</div>
+
+<!-- Testimonio Noticia 1 -->
+<div class="quote-block teal">
+  <div class="quote-text">"Me siento muy honrada de compartir mi experiencia en la Estrategia de Transformación Digital desde 2024. Recibir la insignia de 'agente transformador digital humano' es como una graduación, celebrando mis aprendizajes. Esta experiencia ha fortalecido mi sentido de pertenencia y participación como estudiante y docente en un entorno de aprendizaje colaborativo dentro de la UNED."</div>
+  <div class="quote-author" style="color:var(--teal)">— Niza Castro, docente de la ECSH y miembro del Equipo de Vinculación Estudiantil de TD</div>
+</div>
+
+<!-- ══════════ NOTICIA 2 ══════════ -->
+<div class="story-divider"><span>Segunda noticia</span></div>
+
+<div class="story-block secondary">
+  <div class="story-entrada">Acciones que potencian las competencias digitales del funcionariado UNED</div>
+  <span class="section-tag tag-2">Capacitación</span>
+  <h2 class="story-title">Taller de IA para recursos educativos UNED</h2>
+  <div class="story-meta">
+    <span>🗓 15 de abril, 2026</span>
+    <div class="meta-dot"></div>
+    <span>📌 Estrategia de Transformación Digital</span>
+  </div>
+  <p class="story-lead">El 15 de abril se realizó un taller organizado por la Estrategia de Transformación Digital, enfocado en la utilización de herramientas de inteligencia artificial para el diseño de recursos didácticos digitales. El propósito fue potenciar los cursos de la plataforma UAbierta, reuniendo profesionales de diversas áreas para intercambiar métodos y buenas prácticas en innovación educativa.</p>
+  <p class="story-body">La jornada comenzó con Agustín Gómez, líder del Equipo de IA de Transformación Digital, y contó durante la tarde con aportes de integrantes de UAbierta, PAL, PEM, la Sede universitaria de Ciudad Neilly y otros equipos vinculados a cursos tipo Mooc. Durante el taller se analizaron flujos de trabajo que integran asistentes conversacionales y entornos de desarrollo, destacando la importancia de disponer de ecosistemas de herramientas y de acceso institucional a licencias. Se presentaron ejemplos de generación de juegos, evaluaciones y material multimedia, y se ilustraron aplicaciones de automatización mediante agentes de IA para la atención de consultas estudiantiles.<br><br>
+  Está previsto diseñar una metodología para replicar estos talleres con otras personas funcionarias de la universidad, varias veces al año. La UNED reafirma su compromiso con la innovación educativa y la formación continua.</p>
+</div>
+
+<!-- Galería Noticia 2 -->
+<div class="gallery-section">
+  <div class="gallery-label">Registro fotográfico</div>
+
+  <div class="photo-grid g2" style="grid-template-rows:170px 170px;">
+    <div class="photo-slot" id="s7"><img src="Bloque%202-1.jfif" alt="Foto 1"></div>
+    <div class="photo-slot" id="s8"><img src="Bloque%202-2.jfif" alt="Foto 2"></div>
+    <div class="photo-slot" id="s9"><img src="Bloque%202-3.jfif" alt="Foto 3"></div>
+    <div class="photo-slot" id="s10"><img src="Bloque%202-4.jfif" alt="Foto 4"></div>
+  </div>
+  <p class="photo-caption">Taller de IA para recursos educativos – 15 de abril, 2026</p>
+</div>
+
+<!-- Testimonio Noticia 2 -->
+<div class="quote-block blue">
+  <div class="quote-text">"Este taller evidenció cómo la IA puede convertirse en un aliado clave para aprender, diseñar y desarrollar soluciones digitales de forma más ágil y accesible. Como investigadora, valoro mucho este tipo de espacios donde la tecnología se conecta directamente con la práctica. Fue una experiencia muy útil y aplicable."</div>
+  <div class="quote-author">— Cindy Jiménez, funcionaria del LIIT y Líder del Equipo de Competencias digitales de estudiantes de TD</div>
+</div>
+
+<!-- ══════════ NOTICIA 3 ══════════ -->
+<div class="story-divider"><span>Tercera noticia</span></div>
+
+<div class="story-block secondary">
+  <div class="story-entrada">Proyecto diseñado por Activa Lab de la Vicerrectoría de Investigación</div>
+  <span class="section-tag tag-3">Innovación</span>
+  <h2 class="story-title">UNED celebra Día Mundial de la Creatividad y la Innovación con propuesta "Pasaporte de Competencias"</h2>
+  <div class="story-meta">
+    <span>🗓 21 de abril, 2026</span>
+    <div class="meta-dot"></div>
+    <span>📌 Activa Lab – Vicerrectoría de Investigación</span>
+  </div>
+  <p class="story-lead">La UNED conmemoró el Día Mundial de la Creatividad y la Innovación consolidando por cuarto año consecutivo esta iniciativa liderada por la Estrategia de Transformación Digital. Durante la jornada, se destacó que innovar va más allá del uso de tecnología, al implicar un cambio cultural orientado a transformar procesos y generar valor en un entorno cada vez más dinámico.</p>
+  <p class="story-body">El evento puso sobre la mesa la necesidad de adaptar la educación a un contexto marcado por la inteligencia artificial y la automatización. Se presentó el proyecto <strong>Pasaporte de Competencias</strong>, una estrategia país diseñada por Activa Lab en conjunto con otras personas funcionarias de la UNED, para fortalecer la empleabilidad ante una brecha de talento significativa: el 71% de los empleadores en Costa Rica reporta dificultades para encontrar personal calificado.<br><br>
+  El pasaporte propone un modelo digital que permite registrar y validar microcredenciales e insignias en cinco áreas clave: competencias humanas y cognitivas, habilidades digitales —incluido el uso ético de la IA—, gestión de proyectos, movilidad global e idiomas, y un portafolio dinámico gestionado por cada estudiante. El proyecto iniciará con un plan piloto en diversas carreras de la UNED y busca posicionar al país como referente regional en certificación de competencias.</p>
+  <a class="story-link" href="https://www.youtube.com/watch?v=sWrc9VcsFjE&t=137s" target="_blank">▶ Ver grabación del evento</a>
+</div>
+
+<!-- Galería Noticia 3 -->
+<div class="gallery-section">
+  <div class="gallery-label">Registro fotográfico</div>
+
+  <div class="photo-grid g2" style="grid-template-rows:170px 170px;">
+    <div class="photo-slot" id="s11"><img src="Bloque%203-1.jpg" alt="Foto 1"></div>
+    <div class="photo-slot" id="s12"><img src="Bloque%203-2.jpg" alt="Foto 2"></div>
+    <div class="photo-slot" id="s13"><img src="Bloque%203-3.jpg" alt="Foto 3"></div>
+    <div class="photo-slot" id="s14"><img src="Bloque%203-4.jpg" alt="Foto 4"></div>
+  </div>
+  <p class="photo-caption">Día Mundial de la Creatividad e Innovación – 21 de abril, 2026</p>
+</div>
+
+<!-- Testimonio Noticia 3 -->
+<div class="quote-block">
+  <div class="quote-text">"El proyecto del pasaporte de competencias me parece excelente porque deja atrás los títulos tradicionales y valora lo que de verdad sabemos hacer: habilidades técnicas, digitales y socioemocionales, con evidencias reales de nuestro desempeño. Es perfecto para el mundo laboral actual, fomenta el aprendizaje continuo y permite trayectorias flexibles donde reluce la creatividad, la resolución de problemas y la adaptabilidad. Este proyecto transforma la educación en algo abierto, dinámico e innovador."</div>
+  <div class="quote-author">— Karla Yanitzia Artavia, investigadora del PROIFED y miembro del Equipo Líder de TD</div>
+</div>
+
+<!-- ACTIVIDADES PRÓXIMAS -->
+<div class="activities-section" id="actSection">
+  <div class="activities-header">
+    <span class="activities-header-text">📅 Actividades próximas</span>
+    <button class="ctrl-btn" onclick="toggleActividades()">Ocultar sección</button>
+  </div>
+  <div class="activities-body" id="actBody">
+    <div class="activity-item">
+      <div class="activity-date-box"><div class="activity-day">6</div><div class="activity-month">May</div></div>
+      <div><div class="activity-name">Inician sesiones de REDIIA</div><div class="activity-detail">8:30 a.m. · Virtual</div></div>
+    </div>
+    <div class="activity-item">
+      <div class="activity-date-box"><div class="activity-day">25</div><div class="activity-month">May</div></div>
+      <div><div class="activity-name">Taller internacional Erasmus Ethical AI</div><div class="activity-detail">Presencial · Valencia</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-left">
+    <strong>Estrategia de Transformación Digital</strong>
+    Universidad Estatal a Distancia – UNED<br>
+    transformaciondigital@uned.ac.cr
+  </div>
+  <div class="footer-right">
+    <div class="footer-teal-tag">UNED · Costa Rica</div>
+    <div class="footer-slogan">La transformación digital es humana</div>
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+function exportPDF() {
+  const element = document.querySelector('.page');
+  const toolbar = document.querySelector('.toolbar');
+  
+  // Ocultar temporalmente la barra de herramientas
+  const originalDisplay = toolbar.style.display;
+  toolbar.style.display = 'none';
+  
+  const opt = {
+    margin:       [10, 0, 10, 0],
+    filename:     'Boletin_Abril_2026.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2, useCORS: true },
+    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().set(opt).from(element).save().then(() => {
+    toolbar.style.display = originalDisplay;
+  });
+}
+
+let actVisible = true;
+function toggleActividades(){
+  actVisible = !actVisible;
+  const s = document.getElementById('actSection');
+  s.style.display = actVisible ? '' : 'none';
+}
+</script>
+</body>
+</html>
