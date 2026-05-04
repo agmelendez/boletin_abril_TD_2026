@@ -115,7 +115,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#e8edf3;color:#1a2a3a}
 <div class="toolbar">
   <span>📄 Boletín Abril 2026</span>
   <button class="tb-btn primary" onclick="exportPDF()">🖨 Exportar a PDF</button>
-  <button class="tb-btn" onclick="toggleActividades()">Mostrar/ocultar actividades</button>
 </div>
 
 <!-- HEADER -->
@@ -251,7 +250,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#e8edf3;color:#1a2a3a}
 <div class="activities-section" id="actSection">
   <div class="activities-header">
     <span class="activities-header-text">📅 Actividades próximas</span>
-    <button class="ctrl-btn" onclick="toggleActividades()">Ocultar sección</button>
   </div>
   <div class="activities-body" id="actBody">
     <div class="activity-item">
@@ -303,12 +301,7 @@ function exportPDF() {
   });
 }
 
-let actVisible = true;
-function toggleActividades(){
-  actVisible = !actVisible;
-  const s = document.getElementById('actSection');
-  s.style.display = actVisible ? '' : 'none';
-}
+
 </script>
 </body>
 </html>
